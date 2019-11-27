@@ -1,0 +1,25 @@
+button, a {
+    cursor: pointer !important;
+}
+
+p .desc {
+    color: #7d7e84;
+}
+
+a, .headerSecondLine{
+    color: #0081c5;
+}
+
+
+.headerFirstLine {
+    /*großbuchstaben*/
+    font-size: 11px;
+    color: #44454a
+}
+
+.headerSecondLine {
+    /*großbuchstaben */
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+}

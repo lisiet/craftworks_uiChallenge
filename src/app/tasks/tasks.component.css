@@ -1,0 +1,123 @@
+/* HeroesComponent's private CSS styles */
+.container {
+    display: grid;
+    grid-template-columns: 30% 67%;
+    grid-template-rows: auto auto;
+}
+#listView {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+#detailView {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#newTask {
+    margin-left: 16px;
+    grid-column-start: 1;
+    grid-row-start:1;
+    display: grid;
+    grid-template-columns:  auto 40px;
+    grid-column-gap: 2%;
+}
+#newTask input{
+    width: 100%;
+    grid-column-start: 1;
+}
+
+/*LIST */
+.taskList {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+::ng-deep .mat-list-item{
+     height: 4em !important;
+ }
+::ng-deep .mat-list-item:hover{
+    height: 4em !important;
+    background: #FBFCFD !important;
+}
+::ng-deep .mat-list-item.selected{
+    height: 4em !important;
+    background: #f2f5f8 !important;
+}
+
+.taskList li div {
+    width: 100%;
+    margin: auto !important;
+}
+
+/*checkboxes on left side */
+.leftCheckBox {
+    width: 20%;
+}
+.rightText{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+::ng-deep .mat-checkbox-frame {
+    border: 1px solid grey;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #44b6e9 !important;
+}
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: grey !important;
+    font-size: 14px !important;
+}
+
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: grey !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: grey !important;;
+}
+
+
+button {
+    background: #44b6e9 !important;
+    color: white !important;
+    grid-column-start: 2;
+    height: 50%;
+    min-width: 40px;
+    max-width: 40px;
+    margin: auto;
+    padding: 0px;
+    width: 100%;
+    font-size: 14px !important;
+}
+
+span, p {
+    color: black !important;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: #44b6e9 !important;
+
+}
+
+.date {
+    /*großbuchstaben*/
+    font-size: 11px;
+    color: #44454a
+}
+
+.prio {
+    align-self: flex-end;
+}

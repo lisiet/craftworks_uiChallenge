@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; /*ee42 import material theme*/
+
+
+html, body { height: 100%;
+width: 80%;
+margin: auto;}
+
+body, button{
+    font-family:  'Lato', sans-serif !important;
+    font-weight: 500 !important;
+}
+::ng-deep.mat-form-field{
+    font-family:  'Lato', sans-serif !important;
+
+}
+
+h1 {
+    font-weight: 600 !important;
+
+}
+
+::ng-deep.mat-stroked-button {
+    border: none !important;
+}

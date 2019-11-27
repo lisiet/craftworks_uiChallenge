@@ -1,0 +1,24 @@
+<div class = 'container'>
+    <div id="newTask">
+        <mat-form-field >
+            <input color="secondary" matInput [(ngModel)]="newTaskInput" placeholder="New task">
+        </mat-form-field>
+        <button mat-stroked-button (click)="onNewTask(newTaskInput)">Add</button>
+    </div>
+    <div id = "listView">
+        <!-- todo: new component for new task? -->
+         <mat-nav-list class = "taskList">
+            <mat-list-item (click)="onSelect(task)" *ngFor="let task of getSortedTasks" [class.selected]="task === curTask" >
+                <mat-checkbox  class="leftCheckBox" [(ngModel)]="task.resolved" (change)="clickedCB(task)"></mat-checkbox>
+                <div class="rightText">
+                    <div>
+                        <span class="title">{{task.title}}</span><br>
+                        <span class="date">Due at {{task.dueDate.toLocaleDateString()}}</span>
+                    </div>
+                    <span *ngIf="task.priority" class="prio"><img src="../../assets/img/prio.svg "></span>
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </div>
+    <bs-task-detail [task]="curTask" id = "detailView"></bs-task-detail>
+</div>
