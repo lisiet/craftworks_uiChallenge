@@ -1,12 +1,14 @@
 <div class = 'container'>
+    <!-- CREATE TASK -->
     <div id="newTask">
         <mat-form-field >
             <input color="secondary" matInput [(ngModel)]="newTaskInput" placeholder="New task">
         </mat-form-field>
         <button mat-stroked-button (click)="onNewTask(newTaskInput)">Add</button>
     </div>
+
+    <!-- VIEW TASK LIST / SELECT LIST ITEM FOR MORE DETAIL -->
     <div id = "listView">
-        <!-- todo: new component for new task? -->
          <mat-nav-list class = "taskList">
             <mat-list-item (click)="onSelect(task)" *ngFor="let task of getSortedTasks" [class.selected]="task === curTask" >
                 <mat-checkbox  class="leftCheckBox" [(ngModel)]="task.resolved" (change)="clickedCB(task)"></mat-checkbox>
@@ -20,5 +22,7 @@
             </mat-list-item>
         </mat-nav-list>
     </div>
+
+    <!-- DETAIL VIEW or MASTER VIEW -->
     <bs-task-detail [task]="curTask" id = "detailView"></bs-task-detail>
 </div>

@@ -1,10 +1,6 @@
 import {Component, Directive, Input, NgModule, OnInit, ViewChild} from '@angular/core';
 import { Task } from '../task';
-import { TASKS } from '../mock-tasks';
 import { TaskService } from '../task.service';
-import {angularClassDecoratorKeys} from 'codelyzer/util/utils';
-import {ɵEmptyOutletComponent} from '@angular/router';
-import {AppComponent} from '../app.component';
 
 @Component({
     selector: 'bs-tasks',
@@ -14,7 +10,6 @@ import {AppComponent} from '../app.component';
 
 export class TasksComponent implements OnInit {
     @Input() newTaskInput: string;
-
     curTask: Task;
     tasks: Task[];
     curId: number;

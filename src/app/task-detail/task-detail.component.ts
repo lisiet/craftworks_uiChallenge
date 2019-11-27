@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core'; // include the Innput, so that it can be bound like one in the html class
+import {Component, OnInit, Input} from '@angular/core';
 import {Task} from '../task';
 import {TaskService} from '../task.service';
 
@@ -11,22 +11,17 @@ export class TaskDetailComponent implements OnInit {
     @Input() task: Task;
     tasks: Task[];
 
-    curPriority(task: Task): string {
-        return task.priority ? 'High priority' : 'No priority';
-    }
-
+    // delete current task out of list (use service)
     onDeleteTask(task) {
         this.tasks = this.taskService.getTaskList;
         this.tasks.splice(this.tasks.indexOf(task), 1);
-         this.taskService.setTaskList = this.tasks;
+        this.taskService.setTaskList = this.tasks;
+        this.task = null; // to close detail view
     }
-
     constructor(private taskService: TaskService) {
     }
-
     ngOnInit() {
     }
-
 }
 
 

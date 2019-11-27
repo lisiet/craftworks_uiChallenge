@@ -3,8 +3,8 @@
 
 
 html, body { height: 100%;
-width: 80%;
-margin: auto;}
+    width: 80%;
+    margin: auto;}
 
 body, button{
     font-family:  'Lato', sans-serif !important;
@@ -12,14 +12,4 @@ body, button{
 }
 ::ng-deep.mat-form-field{
     font-family:  'Lato', sans-serif !important;
-
-}
-
-h1 {
-    font-weight: 600 !important;
-
-}
-
-::ng-deep.mat-stroked-button {
-    border: none !important;
 }

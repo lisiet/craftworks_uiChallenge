@@ -1,8 +1,6 @@
 #details {
     padding: 2em 2em !important;
     background-color: #f2f5f8;
-    border-left: 7px solid #44b6e9;
-
 }
 
 .detailLine {
@@ -10,26 +8,48 @@
     margin-bottom: 2em;
 }
 
-.mat-slide-toggle-bar {
-    background-color: green !important;
+::ng-deep.mat-datepicker {
+    color: black !important;
+}
+
+::ng-deep.mat-datepicker-toggle {
+    color: black !important;
+}
+
+::ng-deep.mat-datepicker-toggle:hover {
+    color: #44b6e9 !important;
+}
+
+::ng-deep.mat-calendar-body-cell-content.mat-calendar-body-selected {
+    background-color: #44b6e9 !important;
+}
+
+#deadline {
+    max-width: 200px !important;
+}
+
+#deadline input {
+    color: black !important;
 }
 
 ::ng-deep .mat-slide-toggle-bar {
-     background-color: grey;
- }
+    background-color: grey;
+}
 
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
-    background-color: #44b6e9  !important;
+    background-color: #44b6e9 !important;
 }
 
 #delete {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
+
 #delete button {
     background-color: #44b6e9 !important;
     color: white !important;
     font-size: 14px !important;
     width: 20% !important;
+    min-width: 100px !important;
 }

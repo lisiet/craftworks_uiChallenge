@@ -4,26 +4,42 @@
     grid-template-columns: 30% 67%;
     grid-template-rows: auto auto;
 }
+
 #listView {
     grid-column-start: 1;
     grid-row-start: 2;
 }
+
 #detailView {
+    border-left: 5px solid #44b6e9;
     grid-column-start: 2;
     grid-row-start: 2;
 }
 
+/* CREATE TASK */
 #newTask {
-    margin-left: 16px;
-    grid-column-start: 1;
-    grid-row-start:1;
-    display: grid;
-    grid-template-columns:  auto 40px;
+    width: 100% !important;
+    grid-column-start: 1 !important;
+    grid-row-start: 1 !important;
+    display: grid !important;
     grid-column-gap: 2%;
 }
-#newTask input{
-    width: 100%;
-    grid-column-start: 1;
+
+input {
+    max-width: 100% !important;
+    grid-column-start: 1 !important;
+}
+
+button, .mat-stroked-button, .mat-button-base {
+    background: #44b6e9 !important;
+    color: white !important;
+    grid-column-start: 2 !important;
+    height: 50%;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    margin: auto;
+    padding: 0 !important;
+    font-size: 14px !important;
 }
 
 /*LIST */
@@ -34,14 +50,16 @@
     width: 100%;
 }
 
-::ng-deep .mat-list-item{
-     height: 4em !important;
- }
-::ng-deep .mat-list-item:hover{
+::ng-deep .mat-list-item {
     height: 4em !important;
-    background: #FBFCFD !important;
+    border-bottom: 1px dashed lightgrey;
 }
-::ng-deep .mat-list-item.selected{
+
+::ng-deep .mat-list-item:hover {
+    background: #F4F6F9 !important;
+}
+
+::ng-deep .mat-list-item.selected {
     height: 4em !important;
     background: #f2f5f8 !important;
 }
@@ -55,52 +73,40 @@
 .leftCheckBox {
     width: 20%;
 }
-.rightText{
+
+.rightText {
     width: 80%;
     display: flex;
     justify-content: space-between;
 }
 
 ::ng-deep .mat-checkbox-frame {
-    border: 1px solid grey;
+    border: 0.5px solid #7d7e84 !important;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
     color: #44b6e9 !important;
 }
+
 ::ng-deep .mat-form-field-label {
     /*change color of label*/
-    color: grey !important;
+    color: #44454a !important;
     font-size: 14px !important;
 }
 
 ::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: grey !important;
+    background-color: #44454a !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: grey !important;;
-}
-
-
-button {
-    background: #44b6e9 !important;
-    color: white !important;
-    grid-column-start: 2;
-    height: 50%;
-    min-width: 40px;
-    max-width: 40px;
-    margin: auto;
-    padding: 0px;
-    width: 100%;
-    font-size: 14px !important;
+    background-color: #44454a !important;;
 }
 
 span, p {
-    color: black !important;
+    color: #44454a !important;
 }
 
 .title {
@@ -109,13 +115,12 @@ span, p {
     line-height: 1.6;
     font-weight: bold;
     color: #44b6e9 !important;
-
 }
 
 .date {
     /*großbuchstaben*/
     font-size: 11px;
-    color: #44454a
+    color: #7d7e84 !important;
 }
 
 .prio {

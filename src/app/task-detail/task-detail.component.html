@@ -1,31 +1,37 @@
 <!-- DETAILS -->
-<div *ngIf="task" id="details" >
-        <mat-form-field class="detailLine">
-            <input matInput [(ngModel)]="task.title" placeholder="What's the title of your task?">
-        </mat-form-field>
-        <mat-form-field class="detailLine">
-            <textarea  matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" [(ngModel)]="task.description" placeholder="Space for some details:" cdkAutosizeMinRows="3"
-                       cdkAutosizeMaxRows="10" ></textarea>
-        </mat-form-field>
+<div *ngIf="task" id="details">
 
-        <mat-form-field class="detailLine">
-            <input matInput [(ngModel)]="task.dueDate" [matDatepicker]="picker" placeholder="Task deadline">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+    <!-- TITLE: interaction -->
+    <mat-form-field class="detailLine">
+        <input matInput [(ngModel)]="task.title" placeholder="What's the title of your task?">
+    </mat-form-field>
 
+    <!-- DESCRIPTION: interaction -->
+    <mat-form-field class="detailLine">
+            <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" [(ngModel)]="task.description"
+                      placeholder="Space for some details:" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10">
+            </textarea>
+    </mat-form-field>
 
+    <!-- DUE DATE: interaction -->
+    <mat-form-field id="deadline" class="detailLine">
+        <input matInput [(ngModel)]="task.dueDate" [matDatepicker]="picker" placeholder="Task deadline">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
 
+    <!-- PRIORITY: interaction -->
+    <mat-slide-toggle class="detailLine" [(ngModel)]="task.priority" labelPosition="before">Mark as high priority
+        task:
+    </mat-slide-toggle>
 
-        <mat-slide-toggle [(ngModel)]="task.priority" labelPosition="before">Mark as high priority task: </mat-slide-toggle>
+    <!-- RESOLVED: information -->
+    <div class="detailLine" *ngIf="task.resolved">You resolved this task at {{task.resolveAt.toLocaleDateString()}}
+    </div><br>
 
-    <p class="detailLine" *ngIf="task.resolved">You resolved this task at {{task.resolveAt.toLocaleDateString()}}</p>
-
+    <!-- DELETE: interaction -->
     <span class="detailLine" id="delete">
-        <button  mat-stroked-button
-                                     (click)="onDeleteTask(task)">
-            Delete Task
-        </button>
+        <button mat-stroked-button (click)="onDeleteTask(task)">Delete Task </button>
     </span>
 
 </div>
